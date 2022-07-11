@@ -8,7 +8,7 @@ namespace UC12.Classes
     {
         public string? Cpf { get; set; }
 
-        public DateTime Nasc { get; set; }
+        public DateTime DataNasc { get; set; }
 
         public override float PagarImposto(float redimento)
         {
@@ -17,7 +17,35 @@ namespace UC12.Classes
 
         public bool ValDataNasc(DateTime dataNasc)
         {
-            throw new NotImplementedException();
+            DateTime dataAtual = DateTime.Today;
+
+            double anos = (dataAtual - dataNasc).TotalDays / 365;
+
+            if (anos >= 18)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool ValDataNasc(string dataNasc)
+        {
+            DateTime dataConvertida;
+
+            if (DateTime.TryParse(dataNasc, out dataConvertida))
+            {
+                DateTime dataAtual = DateTime.Today;
+
+                double anos = (dataAtual - dataConvertida).TotalDays / 365;
+
+                if (anos >= 18)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            return false;
         }
     }
 }
