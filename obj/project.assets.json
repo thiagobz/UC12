@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\gabri\\.nuget\\packages\\": {}
+    "C:\\Users\\bZ\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\UC12_Back-end\\UC12_Back-end.csproj",
-      "projectName": "UC12_Back-end",
-      "projectPath": "C:\\Github\\UC12_Back-end\\UC12_Back-end.csproj",
-      "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\UC12_Back-end\\obj\\",
+      "projectUniqueName": "C:\\Users\\bZ\\OneDrive\\Documentos\\GitHub\\UC12\\UC12.csproj",
+      "projectName": "UC12",
+      "projectPath": "C:\\Users\\bZ\\OneDrive\\Documentos\\GitHub\\UC12\\UC12.csproj",
+      "packagesPath": "C:\\Users\\bZ\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bZ\\OneDrive\\Documentos\\GitHub\\UC12\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\bZ\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
