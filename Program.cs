@@ -12,7 +12,7 @@ novaPF.Rendimento = 3500.5f;
 novoEndPF.Logradouro = "Rua Roma";
 novoEndPF.Numero = 3;
 novoEndPF.Complemento = "Minha casa";
-novoEndPF.EndComercial = true;
+novoEndPF.EndComercial = false;
 
 novaPF.Endereco = novoEndPF;
 
@@ -25,4 +25,29 @@ Maior de Idade: {(metodosPF.ValDataNasc(novaPF.DataNasc) ? "Sim" : "Não")}
 
 Endereco: {novaPF.Endereco.Logradouro}, {novaPF.Endereco.Numero}, {novaPF.Endereco.Complemento} 
 Endereço Comercial: {((novaPF.Endereco.EndComercial) ? "Sim" : "Não")}
+");
+
+PessoaJuridica novaPJ = new PessoaJuridica();
+PessoaJuridica metodosPJ = new PessoaJuridica();
+Endereco novoEndPJ = new Endereco();
+
+novaPJ.RazaoSocial = "Senai São Paulo";
+novaPJ.Cnpj = "00111222000133";
+novaPJ.Rendimento = 10000.5f;
+
+novoEndPJ.Logradouro = "Rua ABC";
+novoEndPJ.Numero = 133;
+novoEndPJ.Complemento = "Curso Senai";
+novoEndPJ.EndComercial = true;
+
+novaPJ.Endereco = novoEndPJ;
+
+Console.WriteLine(@$"
+Razão social: {novaPJ.RazaoSocial}
+CNPJ: {novaPJ.Cnpj}
+CNPJ Válido: {((metodosPJ.ValidarCnpj(novaPJ.Cnpj)) ? "Sim" : "Não")}
+
+Endereço: {novaPJ.Endereco.Logradouro}, {novaPJ.Endereco.Numero}
+Complemento {novaPJ.Endereco.Complemento}
+Endereço Comercial: {((novaPJ.Endereco.EndComercial) ? "Sim" : "Não")}
 ");
