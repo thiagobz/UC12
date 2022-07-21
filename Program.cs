@@ -51,6 +51,7 @@ do
             novaPF.Cpf = "123.345.567.89";
             novaPF.Rendimento = 3500.5f;
 
+
             novoEndPF.Logradouro = "Rua Roma";
             novoEndPF.Numero = 3;
             novoEndPF.Complemento = "Minha casa";
@@ -64,6 +65,8 @@ Nome: {novaPF.Nome}
 CPF: {novaPF.Cpf}
 Data de Nascimento: {novaPF.DataNasc}
 Maior de Idade: {(metodosPF.ValDataNasc(novaPF.DataNasc) ? "Sim" : "Não")}
+Salário: {novaPF.Rendimento}
+Imposto de Renda: {novaPF.PagarImposto(novaPF.Rendimento).ToString("C")}
 
 Endereco: {novaPF.Endereco.Logradouro}, {novaPF.Endereco.Numero}, {novaPF.Endereco.Complemento} 
 Endereço Comercial: {((novaPF.Endereco.EndComercial) ? "Sim" : "Não")}
@@ -82,7 +85,7 @@ Endereço Comercial: {((novaPF.Endereco.EndComercial) ? "Sim" : "Não")}
 
             novaPJ.RazaoSocial = "Senai São Paulo";
             novaPJ.Cnpj = "00111222000133";
-            novaPJ.Rendimento = 10000.5f;
+            novaPJ.Rendimento = 12000.5f;
 
             novoEndPJ.Logradouro = "Rua ABC";
             novoEndPJ.Numero = 133;
@@ -95,6 +98,8 @@ Endereço Comercial: {((novaPF.Endereco.EndComercial) ? "Sim" : "Não")}
 Razão social: {novaPJ.RazaoSocial}
 CNPJ: {novaPJ.Cnpj}
 CNPJ Válido: {((metodosPJ.ValidarCnpj(novaPJ.Cnpj)) ? "Sim" : "Não")}
+Salário: {novaPJ.Rendimento.ToString("C")}
+Imposto de Renda: {novaPJ.PagarImposto(novaPJ.Rendimento).ToString("C")}
 
 Endereço: {novaPJ.Endereco.Logradouro}, {novaPJ.Endereco.Numero}
 Complemento {novaPJ.Endereco.Complemento}
