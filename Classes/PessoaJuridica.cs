@@ -38,13 +38,18 @@ namespace UC12.Classes
             return false;
 
             /* Regex implicito dentro do if
-            if (Regex.IsMatch(cnpj, @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)"))
-            {
-                return true;
-            } 
+                if (Regex.IsMatch(cnpj, @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)"))
+                {
+                    return true;
+                } 
             */
         }
 
+        /* 
+            tributação de IR para PJ ->
+
+
+        */
         public override float PagarImposto(float redimento)
         {
             throw new NotImplementedException();

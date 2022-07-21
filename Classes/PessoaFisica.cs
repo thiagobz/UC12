@@ -10,10 +10,6 @@ namespace UC12.Classes
 
         public DateTime DataNasc { get; set; }
 
-        public override float PagarImposto(float redimento)
-        {
-            throw new NotImplementedException();
-        }
 
         public bool ValDataNasc(DateTime dataNasc)
         {
@@ -46,6 +42,19 @@ namespace UC12.Classes
             }
 
             return false;
+        }
+
+        /*
+            tributação de IR para PF ->
+
+            0 a 1500 =  0%
+            1500 a 3000 = 3%
+            3000 a 6000 = 5%
+            > 6000 = 7.5%
+        */
+        public override float PagarImposto(float redimento)
+        {
+            throw new NotImplementedException();
         }
     }
 }
