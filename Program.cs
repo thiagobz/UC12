@@ -233,7 +233,28 @@ Endereço Comercial: {((cadaPessoa.Endereco.EndComercial) ? "Sim" : "Não")}
                         novaPJ.RazaoSocial = Console.ReadLine();
 
                         Console.WriteLine($"Digite o CNPJ.");
-                        novaPJ.Cnpj = Console.ReadLine();
+                        
+                        bool cnpjValido;
+                        do
+                        {
+                            Console.WriteLine($"Digite o CNPJ da empresa.");
+                            string? cnpj = Console.ReadLine();
+                            
+                            cnpjValido = metodosPJ.ValidarCnpj(cnpj);
+
+                            if (cnpjValido)
+                            {
+                                novaPJ.Cnpj = cnpj;
+                            } else {
+                                Console.BackgroundColor = ConsoleColor.Red;
+                                Console.WriteLine($"CNPJ digitado inválido, por favor digitar um CNPJ válido.");
+                                Console.ResetColor();
+                                Thread.Sleep(2000);
+                            }
+                            
+                        } while (cnpjValido == false);
+
+
 
                         Console.WriteLine($"Digite o rendimento mensal da empresa.");
                         novaPJ.Rendimento = float.Parse(Console.ReadLine());
