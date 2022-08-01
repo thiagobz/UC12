@@ -44,6 +44,9 @@ namespace UC12.Classes
             return false;
         }
 
+        public string? Caminho { get; private set; } = "Database/pessoaFisica.csv";
+        
+        
         /*
             tributação de IR para PF ->
 
@@ -70,6 +73,15 @@ namespace UC12.Classes
             {
                 return rendimento * 0.05f;
             }
+        }
+
+        public void Inserir(PessoaFisica pf)
+        {
+            Util.VerificarPastaArquivo(Caminho);
+            
+            string[] PfStrings = {$"{pf.Nome}, {pf.Cpf}, {pf.DataNasc}, {pf.Endereco}"};
+
+            File.AppendAllLines(Caminho, PfStrings);
         }
     }
 }

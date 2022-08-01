@@ -15,5 +15,19 @@ namespace UC12.Classes
             }
             Console.ResetColor();
         }
+
+        public static void VerificarPastaArquivo(string caminhoArquivo)
+        {
+            string pasta = caminhoArquivo.Split("/")[0];
+            if (!Directory.Exists(pasta))
+            {
+                Directory.CreateDirectory(pasta);
+            }
+
+            if (!File.Exists(caminhoArquivo))
+            {
+                using (File.Create(caminhoArquivo)){}
+            }
+        }
     }
 }

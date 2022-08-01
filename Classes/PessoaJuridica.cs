@@ -10,6 +10,10 @@ namespace UC12.Classes
 
         public string? RazaoSocial { get; set; }
 
+        public string? Caminho { get; private set; } = "Database/pessoaJuridica.csv";
+
+
+
         // xx.xxx.xxx/0001-xx | xxxxxxxxxxxxxx
         public bool ValidarCnpj(string cnpj)
         {
@@ -71,6 +75,43 @@ namespace UC12.Classes
             {
                 return rendimento * 0.09f;
             }
+        }
+
+
+        public void Inserir(PessoaJuridica pj)
+        {
+            Util.VerificarPastaArquivo(Caminho);
+
+            string[] PjStrings = { $"{pj.Nome}, {pj.Cnpj}, {pj.RazaoSocial}, {pj.Rendimento}, {pj.Endereco.Logradouro}, {pj.Endereco.Numero}, {pj.Endereco.Complemento}, {pj.Endereco.EndComercial}" };
+
+            File.AppendAllLines(Caminho, PjStrings);
+        }
+
+        public List<PessoaJuridica> lerArquivo()
+        {
+            List<PessoaJuridica> listaPj = new List<PessoaJuridica>();
+
+            string[] linhas = File.ReadAllLines(Caminho);
+
+            foreach (string cadaLinha in linhas)
+            {
+                string[] atributos = cadaLinha.Split(",");
+                PessoaJuridica atrPJ = new PessoaJuridica();
+
+                atrPJ.Nome = atributos[0];
+                atrPJ.RazaoSocial = atributos[1];
+                atrPJ.Cnpj = atributos[2];
+                atrPJ.Rendimento = float.Parse(atributos[3]);
+                
+                atrPJ.Endereco.Logradouro = atributos[4];
+                atrPJ.Endereco.Numero = int.Parse(atributos[5]);
+                atrPJ.Endereco.Complemento = atributos[6];
+                atrPJ.Endereco.EndComercial = bool.Parse(atributos[7]);
+
+
+                listaPj.Add(atrPJ);
+            }
+            return listaPj;
         }
     }
 }
